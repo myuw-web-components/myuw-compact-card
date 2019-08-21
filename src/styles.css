@@ -1,0 +1,8 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons");
+@import url("https://fonts.googleapis.com/css?family=Roboto:500&display=swap");
+
+body {
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 14px;
+}

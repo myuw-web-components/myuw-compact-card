@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Custom Element</title>
+    <link rel="stylesheet" type="text/css" src="styles.css"/>
+  </head>
+
+  <body>
+    <div style="width: 293px;">
+      <myuw-compact-card
+        title="STAR Time and Leave Entry"
+        uid="custom-elt"
+        url="https://my.wisc.edu/star"
+        icon="star"
+        id="testone"
+      >
+      </myuw-compact-card>
+      <myuw-compact-card
+        title="Time and Absence"
+        fname="time-and-absence"
+        url="https://my.wisc.edu/star"
+        icon="credit-card"
+        id="test"
+      >
+      </myuw-compact-card>
+    </div>
+    <script>
+      const el1 = document.getElementById('testone');
+      el1.addEventListener('deleteCardNotify', e => {
+        console.log(e.detail);
+      });
+      const el = document.getElementById('test');
+      el.addEventListener('deleteCardNotify', e => {
+        console.log(e.detail);
+      });
+    </script>
+  </body>
+</html>
