@@ -42,5 +42,19 @@
     "tslint": "~5.18.0",
     "typescript": "3.5.3",
     "webpack-bundle-analyzer": "^3.4.1"
-  }
+  },
+  "name": "@myuw-web-components/myuw-compact-card",
+  "description": "A compact card for MyUW",
+  "version": "1.0.0",
+  "main": "elements/element.js",
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/myuw-web-components/myuw-compact-card.git"
+  },
+  "bugs": {
+    "url": "https://github.com/myuw-web-components/myuw-compact-card/issues"
+  },
+  "homepage": "https://github.com/myuw-web-components/myuw-compact-card#readme"
 }
