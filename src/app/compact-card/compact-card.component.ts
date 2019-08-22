@@ -20,7 +20,8 @@ export class CompactCardComponent {
   MAINTENANCE_LIFECYCLE = "MAINTENANCE"
   @Input() title: string; // Card title
   @Input() uid: string; // Unique name of the card frame
-  @Input() icon: string;
+  @Input() faIcon: string;
+  @Input() mdIcon: string;
   @Input() url: string;
 
   @Output() deleteCardNotify = new EventEmitter<string>();

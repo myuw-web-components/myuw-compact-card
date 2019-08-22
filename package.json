@@ -45,7 +45,7 @@
   },
   "name": "@myuw-web-components/myuw-compact-card",
   "description": "A compact card for MyUW",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "element/element.js",
   "files": [
     "element"

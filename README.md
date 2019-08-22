@@ -7,7 +7,9 @@ This is a compact card web component used with MyUW.
 
 `uid`: The unique ID of the card.
 
-`icon`: The Font Awesome name of the font.
+`md-icon`: Material UI icon name.
+
+`fa-icon`: Font Awesome icon name.
 
 `url`: The URL to open when the card is clicked. If the URL starts with `http` or `https`
 the link will open in a new tab. If it is relative it will open in the same tab.
