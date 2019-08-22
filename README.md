@@ -1,8 +1,27 @@
 # MyUW Compact Card
 This is a compact card web component used with MyUW.
 
+![Screenshot showing an example of a compact card](compact-card.png "Compact Card")
+
 # Using
 
+Add the following to your page's `<head>`:
+```html
+<script src="https://unpkg.com/@myuw-web-components/myuw-compact-card@^1"></script>
+```
+
+Using the component 
+```javascript
+  <myuw-compact-card
+    title="My Account"
+    uid="unique-identifier"
+    url="/star"
+    md-icon="account_circle"
+  >
+  </myuw-compact-card>
+```
+
+## Configurable properties
 `title`: The title of the web component.
 
 `uid`: The unique ID of the card.
