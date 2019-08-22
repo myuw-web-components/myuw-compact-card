@@ -4,7 +4,8 @@
 
 .mat-card {
   padding: 0px !important;
-  margin: 0px !important;
+  width: 293px;
+  margin: 5px;
 }
 
 .list-content {

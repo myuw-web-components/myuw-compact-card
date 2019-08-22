@@ -22,7 +22,6 @@ export class CompactCardComponent {
   @Input() uid: string; // Unique name of the card frame
   @Input() icon: string;
   @Input() url: string;
-  @Input() newtab: string;
 
   @Output() deleteCardNotify = new EventEmitter<string>();
 
@@ -38,10 +37,12 @@ export class CompactCardComponent {
   }
 
   /**
-   * Go to given link when card is clicked.
+    * Go to given link when card is clicked. If url starts with http(s) open
+    * link in new tab.
    */
   handleCardClick() {
-    if(this.newtab === "true") {
+    var reg = new RegExp('^http(s)?');
+    if(reg.test(this.url)) {
       window.open(this.url, "_blank");
     } else {
       this.document.location.href = this.url;
