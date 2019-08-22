@@ -34,7 +34,7 @@ export class CompactCardComponent {
    * Notify the page using the web component that the user clicked the delete button.
    */
   handleCardDelete() {
-    this.deleteCardNotify.emit(this.fname);
+    this.deleteCardNotify.emit(this.uid);
   }
 
   /**
