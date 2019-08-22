@@ -7,7 +7,7 @@
 
   <span (click)="handleCardClick()">
     <div class="icon-container">
-      <i *ngIf="mdIcon" class="material-icons widget-icon">{{ mdIcon }}</i>
+      <mat-icon *ngIf="mdIcon" class="widget-icon">{{ mdIcon }}</mat-icon>
       <fa-icon *ngIf="faIcon" [classes]="['widget-icon']" [icon]="['fas', faIcon]"></fa-icon>
     </div>
     <div class="title-container">
