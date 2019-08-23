@@ -47,6 +47,16 @@ as the UID of the card.
   });
 ```
 
+## Nuances
+
++ Ignores `fa-icon` attribute when its value includes `{`.
+  This is so that an AngularJS application can naively invoke this web component
+  feeding the `fa-icon` attribute an AngularJS expression, with this web
+  component ignoring the attribute until the AngularJS expression resolves.
+  Without this bit of complexity, 
+  `FontAwesome: Could not find icon with iconName={{widget.faIcon |`
+  littered the logs where `uPortal-app-framework` uses this web component.
+
 # Local Development
 
 Install dependencies with `npm install`
