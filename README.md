@@ -30,6 +30,8 @@ Using the component
 
 `fa-icon`: Font Awesome icon name.
 
+`svg-icon`: A relative SVG icon URL.
+
 `url`: The URL to open when the card is clicked. If the URL starts with `http` or `https`
 the link will open in a new tab. If it is relative it will open in the same tab.
 

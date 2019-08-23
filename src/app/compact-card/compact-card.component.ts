@@ -9,6 +9,8 @@ import {
 import { DOCUMENT } from '@angular/common';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { library } from '@fortawesome/fontawesome-svg-core';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 @Component({
   selector: 'myuw-compact-card',
@@ -24,9 +26,24 @@ export class CompactCardComponent {
   @Input() mdIcon: string;
   @Input() url: string;
 
+  /**
+   * Set the SVG Icon URL and call the create custom icon function.
+   */
+  @Input("svgIcon")
+  set svgIcon(url) {
+    this.svgIconUrl = url;
+    this.createCustomIcon(url);
+  }
+
+  public svgIconUrl;
+
   @Output() deleteCardNotify = new EventEmitter<string>();
 
-  constructor(@Inject(DOCUMENT) private document: any) {
+  constructor(
+    @Inject(DOCUMENT) private document: any,
+    private matIconRegistry: MatIconRegistry,
+    private domSanitizer: DomSanitizer
+  ) {
     library.add(fas);
   }
 
@@ -48,5 +65,17 @@ export class CompactCardComponent {
     } else {
       this.document.location.href = this.url;
     }
+  }
+
+  /**
+   * Create a custom SVG Icon with the name "customSvgIcon".
+   * @param url The relative URL to the SVG icon.
+   */
+  createCustomIcon(url) {
+    console.log("Creating Icon");
+    this.matIconRegistry.addSvgIcon(
+      "customSvgIcon",
+      this.domSanitizer.bypassSecurityTrustResourceUrl(url)
+    );
   }
 }
