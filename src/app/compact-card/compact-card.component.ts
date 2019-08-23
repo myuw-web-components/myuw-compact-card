@@ -8,9 +8,9 @@ import {
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { library } from '@fortawesome/fontawesome-svg-core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { FaIconLibrary } from '@fortawesome/angular-fontawesome';
 
 @Component({
   selector: 'myuw-compact-card',
@@ -42,9 +42,10 @@ export class CompactCardComponent {
   constructor(
     @Inject(DOCUMENT) private document: any,
     private matIconRegistry: MatIconRegistry,
-    private domSanitizer: DomSanitizer
+    private domSanitizer: DomSanitizer,
+    private library: FaIconLibrary
   ) {
-    library.add(fas);
+    library.addIconPacks(fas);
   }
 
   /**
@@ -72,7 +73,6 @@ export class CompactCardComponent {
    * @param url The relative URL to the SVG icon.
    */
   createCustomIcon(url) {
-    console.log("Creating Icon");
     this.matIconRegistry.addSvgIcon(
       "customSvgIcon",
       this.domSanitizer.bypassSecurityTrustResourceUrl(url)
