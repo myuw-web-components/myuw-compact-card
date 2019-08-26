@@ -73,7 +73,30 @@ Install dependencies with `npm install`
 
 Run local server with `npm run serve:element`
 
-# Building
+## Releasing
 
-Build the element into a single JavaScript file with `npm run build-element`. A single file
-will be generated in `element/element.js`. This build path can be changed in `build-elements.js`
+**We're treating the 1.x series as unstable, so just bump the PATCH version and
+don't worry about it.
+
+### Building
+
+Build the element into a single JavaScript file with
+
+`npm run build-element`. 
+
+A single file will be generated in `element/element.js`. This build path can be
+changed in `build-elements.js`.
+
+This compile step ensures that the `element.js` that will be used at runtime
+by downstream applications matches the source code.
+
+### Versioning
+
+Bump the version number. We're not yet tracking breaking changes, so all
+releases are patch releases.
+
+`npm version patch`
+
+### Publishing
+
+`npm publish --access public`
