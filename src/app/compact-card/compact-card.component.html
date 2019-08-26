@@ -19,6 +19,11 @@
 
 <!-- Menu -->
 <mat-menu #menu="matMenu" class="custom-menu-panel">
+  <!-- About -->
+  <a mat-menu-item class="menu-item" href="/web/apps/details/{{uid}}">
+    <mat-icon>info</mat-icon>
+    About {{title}}
+  </a>
   <!-- Remove widget button -->
   <button mat-menu-item class="menu-item" (click)="handleCardDelete()">
     <mat-icon>delete</mat-icon>
