@@ -10,35 +10,35 @@
 
   <body>
     <myuw-compact-card
-      title="STAR Time and Leave Entry"
-      uid="custom-elt"
+      title="FontAwesome icon, external URL opens in new tab"
+      uid="fontawesome-test-uid"
       url="https://my.wisc.edu/star"
       fa-icon="star"
-      id="testone"
+      id="fontawesome-test"
     >
     </myuw-compact-card>
     <myuw-compact-card
-      title="Time and Absence"
-      uid="time-and-absence"
+      title="Material icon; relative URL opens in same tab"
+      uid="material-test-uid"
       url="/star"
       md-icon="account_circle"
-      id="test"
+      id="material-test"
     >
     </myuw-compact-card>
     <myuw-compact-card
-      title="Time and Absence"
-      uid="time-and-absence"
+      title="SVG icon"
+      uid="svg-test-uid"
       url="/star"
       svg-icon="assets/sample.svg"
-      id="test"
+      id="svg-test"
     >
     </myuw-compact-card>
     <myuw-compact-card
-      title="Time and Absence"
-      uid="time-and-absence"
+      title="Another SVG icon"
+      uid="another-svg-test-uid"
       url="/star"
       svg-icon="assets/sample1.svg"
-      id="test"
+      id="another-svg-test"
     >
     </myuw-compact-card>
     <myuw-compact-card
@@ -49,12 +49,7 @@
     >
     </myuw-compact-card>
     <script>
-      const el1 = document.getElementById('testone');
-      el1.addEventListener('deleteCardNotify', e => {
-        console.log(e.detail);
-      });
-      const el = document.getElementById('test');
-      el.addEventListener('deleteCardNotify', e => {
+      document.addEventListener('deleteCardNotify', e => {
         console.log(e.detail);
       });
     </script>
