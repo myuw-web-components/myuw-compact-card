@@ -37,8 +37,16 @@ the link will open in a new tab. If it is relative it will open in the same tab.
 
 ## Removing Card
 
-When the remove card button is clicked a `deleteCardNotify` event is fired where `event.detail`
-as the UID of the card.
+`myuw-compact-card`s have a contextual menu with a delete menu item. When users
+attempt to delete the card, this web component fires a custom `deleteCardNotify`
+**DOM event** on the `myuw-compact-card` element where `event.detail` is the UID
+of the card.
+
+This event is both `bubbles` and `composed` so it will bubble up into the parent
+document (beyond this web component's shadow DOM).
+
+Handling that event to actually delete the card is an exercise left to the
+implementer.
 
 ```javascript
   const el = document.getElementById('my-card');

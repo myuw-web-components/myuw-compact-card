@@ -4,7 +4,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  Inject
+  Inject,
+  ElementRef
 } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -37,13 +38,12 @@ export class CompactCardComponent {
 
   public svgIconUrl;
 
-  @Output() deleteCardNotify = new EventEmitter<string>();
-
   constructor(
     @Inject(DOCUMENT) private document: any,
     private matIconRegistry: MatIconRegistry,
     private domSanitizer: DomSanitizer,
-    private library: FaIconLibrary
+    private library: FaIconLibrary,
+    private el: ElementRef
   ) {
     library.addIconPacks(fas);
   }
@@ -52,7 +52,13 @@ export class CompactCardComponent {
    * Notify the page using the web component that the user clicked the delete button.
    */
   handleCardDelete() {
-    this.deleteCardNotify.emit(this.uid);
+    this.el.nativeElement
+      .dispatchEvent(new CustomEvent('deleteCardNotify', {
+        detail: this.uid,
+        bubbles: true,
+        composed: true
+      }));
+
   }
 
   /**
