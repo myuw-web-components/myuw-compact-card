@@ -22,7 +22,8 @@ Using the component
   </myuw-compact-card>
 ```
 
-## Configurable properties
+### Configurable properties
+
 `title`: The title of the web component.
 
 `uid`: The unique ID of the card.
@@ -36,7 +37,7 @@ Using the component
 `url`: The URL to open when the card is clicked. If the URL starts with `http` or `https`
 the link will open in a new tab. If it is relative it will open in the same tab.
 
-## Removing Card
+### Removing Card
 
 `myuw-compact-card`s have a contextual menu with a delete menu item. When users
 attempt to delete the card, this web component fires a custom `deleteCardNotify`
@@ -56,7 +57,7 @@ implementer.
   });
 ```
 
-## Nuances
+### Nuances
 
 + Ignores `fa-icon` attribute when its value includes `{`.
   This is so that an AngularJS application can naively invoke this web component
@@ -66,7 +67,7 @@ implementer.
   `FontAwesome: Could not find icon with iconName={{widget.faIcon |`
   littered the logs where `uPortal-app-framework` uses this web component.
 
-# Local Development
+## Local Development
 
 Install dependencies with `npm install`
 
