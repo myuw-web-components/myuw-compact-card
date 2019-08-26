@@ -49,20 +49,7 @@
     >
     </myuw-compact-card>
     <script>
-      const fontawesomeTestElement = document.getElementById('fontawesome-test');
-      fontawesomeTestElement.addEventListener('deleteCardNotify', e => {
-        console.log(e.detail);
-      });
-      const materialTestElement = document.getElementById('material-test');
-      materialTestElement.addEventListener('deleteCardNotify', e => {
-        console.log(e.detail);
-      });
-      const svgTestElement = document.getElementById('svg-test');
-      svgTestElement.addEventListener('deleteCardNotify', e => {
-        console.log(e.detail);
-      });
-      const anotherSvgTestElement = document.getElementById('another-svg-test');
-      anotherSvgTestElement.addEventListener('deleteCardNotify', e => {
+      document.addEventListener('deleteCardNotify', e => {
         console.log(e.detail);
       });
     </script>
