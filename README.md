@@ -1,9 +1,10 @@
 # MyUW Compact Card
+
 This is a compact card web component used with MyUW.
 
 ![Screenshot showing an example of a compact card](compact-card.png "Compact Card")
 
-# Using
+## Using
 
 Add the following to your page's `<head>`:
 ```html
@@ -21,7 +22,8 @@ Using the component
   </myuw-compact-card>
 ```
 
-## Configurable properties
+### Configurable properties
+
 `title`: The title of the web component.
 
 `uid`: The unique ID of the card.
@@ -35,7 +37,7 @@ Using the component
 `url`: The URL to open when the card is clicked. If the URL starts with `http` or `https`
 the link will open in a new tab. If it is relative it will open in the same tab.
 
-## Removing Card
+### Removing Card
 
 `myuw-compact-card`s have a contextual menu with a delete menu item. When users
 attempt to delete the card, this web component fires a custom `deleteCardNotify`
@@ -55,7 +57,7 @@ implementer.
   });
 ```
 
-## Nuances
+### Nuances
 
 + Ignores `fa-icon` attribute when its value includes `{`.
   This is so that an AngularJS application can naively invoke this web component
@@ -65,13 +67,36 @@ implementer.
   `FontAwesome: Could not find icon with iconName={{widget.faIcon |`
   littered the logs where `uPortal-app-framework` uses this web component.
 
-# Local Development
+## Local Development
 
 Install dependencies with `npm install`
 
 Run local server with `npm run serve:element`
 
-# Building
+## Releasing
 
-Build the element into a single JavaScript file with `npm run build-element`. A single file
-will be generated in `element/element.js`. This build path can be changed in `build-elements.js`
+**We're treating the 1.x series as unstable, so just bump the PATCH version and
+don't worry about it.
+
+### Building
+
+Build the element into a single JavaScript file with
+
+`npm run build-element`. 
+
+A single file will be generated in `element/element.js`. This build path can be
+changed in `build-elements.js`.
+
+This compile step ensures that the `element.js` that will be used at runtime
+by downstream applications matches the source code.
+
+### Versioning
+
+Bump the version number. We're not yet tracking breaking changes, so all
+releases are patch releases.
+
+`npm version patch`
+
+### Publishing
+
+`npm publish --access public`
