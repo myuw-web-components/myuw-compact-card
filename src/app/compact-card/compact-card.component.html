@@ -10,6 +10,7 @@
       <mat-icon *ngIf="svgIconUrl" class="widget-icon" svgIcon="customSvgIcon"></mat-icon>
       <mat-icon *ngIf="mdIcon" class="widget-icon">{{ mdIcon }}</mat-icon>
       <fa-icon *ngIf="faIcon && !faIcon.includes('{')" [classes]="['widget-icon']" [icon]="['fas', faIcon]"></fa-icon>
+      <mat-icon *ngIf="!svgIconUrl && !mdIcon && !faIcon" class="widget-icon">star</mat-icon>
     </div>
     <div class="title-container">
       <h4>{{ title }}</h4>

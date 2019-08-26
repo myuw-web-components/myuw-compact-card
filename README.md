@@ -22,20 +22,29 @@ Using the component
   </myuw-compact-card>
 ```
 
-### Configurable properties
+## Element attributes
 
-`title`: The title of the web component.
+Required:
 
-`uid`: The unique ID of the card.
++ `title`: The title of the content represented by the card.
+  Example: "Search the Library Catalog"
++ `uid`: The unique ID of the card.
+  For current MyUW content, this is the `fname`.
+  Example: "madison-library-catalog"
++ `url`: The URL to open when the card is clicked. If the URL starts with `http`
+  or `https` the link will open in a new tab. If it is relative it will open in
+  the same tab.
 
-`md-icon`: Material UI icon name.
+Set up to one of:
 
-`fa-icon`: Font Awesome icon name.
++ `md-icon`: [Material UI icon][] name.
+  Example: `account_balance_wallet`
++ `fa-icon`: [Font Awesome icon][] name.
+  Example: `font-awesome` . Note these values do *not* have the `fa-` prefix.
++ `svg-icon`: URL to an SVG file to use as icon
+  Example: `/images/widgetIcons/linkedin-logo.svg`
 
-`svg-icon`: A relative SVG icon URL.
-
-`url`: The URL to open when the card is clicked. If the URL starts with `http` or `https`
-the link will open in a new tab. If it is relative it will open in the same tab.
+If none of these are set, `myuw-compact-card` shows a default icon.
 
 ### Removing Card
 
@@ -100,3 +109,6 @@ releases are patch releases.
 ### Publishing
 
 `npm publish --access public`
+
+[Material UI icon]: https://material.io/resources/icons/?style=baseline
+[Font Awesome icon]: https://fontawesome.com/icons?d=gallery&m=free
