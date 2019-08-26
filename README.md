@@ -1,9 +1,10 @@
 # MyUW Compact Card
+
 This is a compact card web component used with MyUW.
 
 ![Screenshot showing an example of a compact card](compact-card.png "Compact Card")
 
-# Using
+## Using
 
 Add the following to your page's `<head>`:
 ```html
