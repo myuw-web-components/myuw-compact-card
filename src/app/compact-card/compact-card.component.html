@@ -17,7 +17,7 @@
 
     </div>
     <div class="title-container">
-      <h4>{{ title }}</h4>
+      <h4 *ngIf="title && !title.includes('{')">{{ title }}</h4>
     </div>
   </span>
   <mat-progress-bar
