@@ -20,7 +20,9 @@
       <h4>{{ title }}</h4>
     </div>
   </span>
-  <mat-progress-bar *ngIf="!title || title.includes('{')" mode="indeterminate">
+  <mat-progress-bar
+    *ngIf="!title || title.includes('{')" mode="indeterminate"
+    aria-label="tile is still loading for content with id {{uid}}">
   </mat-progress-bar>
 </mat-card>
 
