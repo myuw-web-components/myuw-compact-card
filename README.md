@@ -75,6 +75,15 @@ implementer.
   Without this bit of complexity, 
   `FontAwesome: Could not find icon with iconName={{widget.faIcon |`
   littered the logs where `uPortal-app-framework` uses this web component.
++ Likewise, ignores `svg-icon` attribute when its value includes `{`.
+  This is likewise so that an AngularJS application can naively invoke this web
+  component feeding the `svg-icon` attribute an AngularJS expression, with this
+  web component ignoring the attribute until the AngularJS expression resolves.
+  Without this bit of complexity,
+
+```console
+Error retrieving icon: Http failure response for .../web/%7B%7B::widget.iconUrl%7D%7D: 404 Not Found
+```
 
 ## Local Development
 

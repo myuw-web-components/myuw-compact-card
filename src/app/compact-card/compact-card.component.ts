@@ -32,8 +32,10 @@ export class CompactCardComponent {
    */
   @Input("svgIcon")
   set svgIcon(url) {
-    this.svgIconUrl = url;
-    this.createCustomIcon(url);
+    if (! url.startsWith("{")) { // ignore AngularJS expression premature bind
+      this.svgIconUrl = url;
+      this.createCustomIcon(url);
+    }
   }
 
   public svgIconUrl;
