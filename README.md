@@ -1,5 +1,9 @@
 # MyUW Compact Card
 
+**`myuw-compact-card` has no known usages and is not currently maintained.**
+
+![No maintenance intended](https://img.shields.io/maintenance/no/2020)
+
 This is a compact card web component used with MyUW.
 
 ![Screenshot showing an example of a compact card](compact-card.png "Compact Card")
